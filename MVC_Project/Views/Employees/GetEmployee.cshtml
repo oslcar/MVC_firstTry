@@ -1,0 +1,64 @@
+﻿@model MVC_Project.Models.Employee
+
+@{
+    var department = Model.Department;
+    ViewBag.Title = "GetEmployee";
+}
+
+<h2>Employee details</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Name)
+        </dd>
+        <dt>
+            @Html.DisplayName("Hardware")
+        </dt>
+        <dd>
+            @Html.ActionLink("Check assigned hardware", "ListOfHardware", new {ownerID=Model.ID})
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink($"Back to {department.Name} employees", "DepartmentEmployees", "Departments", new { id = Model.Department_ID }, null)
+</p>
