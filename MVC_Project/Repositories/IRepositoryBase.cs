@@ -10,8 +10,8 @@ namespace MVC_Project.Repositories
     public interface IRepositoryBase<Entity> where Entity : class
     {
         Entity Get(int id);
-        IEnumerable<Entity> GetAll();
-        IEnumerable<Entity> Find(Expression<Func<Entity, bool>> predicate);
+        IQueryable<Entity> GetAll();
+        IQueryable<Entity> Find(Expression<Func<Entity, bool>> predicate);
         
         void Add(Entity entity);
         void AddRange(IEnumerable<Entity> entities);

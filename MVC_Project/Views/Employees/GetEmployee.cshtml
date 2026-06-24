@@ -54,11 +54,11 @@
             @Html.DisplayName("Hardware")
         </dt>
         <dd>
-            @Html.ActionLink("Check assigned hardware", "ListOfHardware", new {ownerID=Model.ID})
+            @Html.ActionLink("Check assigned hardware", "ListOfHardware", "Hardware", new {id=Model.ID}, null)
         </dd>
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink($"Back to {department.Name} employees", "DepartmentEmployees", "Departments", new { id = Model.Department_ID }, null)
+    @Html.ActionLink($"Back to {department.Name} employees", "DepartmentEmployees", "Employees", new { id = Model.Department_ID }, null)
 </p>

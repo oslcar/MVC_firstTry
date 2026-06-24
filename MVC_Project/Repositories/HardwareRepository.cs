@@ -1,4 +1,5 @@
-﻿using MVC_Project.Models;
+﻿using MVC_Project.Context;
+using MVC_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,9 +8,9 @@ using System.Web;
 
 namespace MVC_Project.Repositories
 {
-    public class HardwareRepository : RepositoryBase<Hardware>
+    public class HardwareRepository : RepositoryBase<Hardware>, IHardwareRepository
     {
-        public HardwareRepository(DbContext context) : base(context)
+        public HardwareRepository(EmployeeContext context) : base(context)
         { 
         }
 

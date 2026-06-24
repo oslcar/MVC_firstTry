@@ -7,16 +7,17 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using MVC_Project.Context;
 using MVC_Project.Repositories;
+using MVC_Project.Service;
 
 namespace MVC_Project.Controllers
 {
     public class EmployeesController : Controller
     {
 
-        private readonly IEmployeeRepository _employeeRepository;
-        public EmployeesController(IEmployeeRepository employeeRepository)
+        private readonly IEmployeeService _employeeService;
+        public EmployeesController(IEmployeeService employeeService)
         {
-            _employeeRepository = employeeRepository;
+            _employeeService = employeeService;
         }
         // GET: Employees
         public ActionResult EmployeesToList()
@@ -24,21 +25,18 @@ namespace MVC_Project.Controllers
 
             /*IEnumerable<Employee> _employees = db.Employees
                 .ToList();*/
-            var allEmployees = _employeeRepository.GetAll();
+            var allEmployees = _employeeService.GetAll();
             return View(allEmployees);
 
         }
-
-        /*public ActionResult ListOfHardware(int? id)
-        {
-            HardwareRepository hardware = new HardwareRepository(db);
-            return View(hardware.GetHardwareByOwner(id).ToList());
-        }
-        */
         public ActionResult GetEmployee(int id)
         {   
-            var employee = _employeeRepository.Get(id);
-            return View(employee);
+            return View(_employeeService.Get(id));
+        }
+        public ActionResult DepartmentEmployees(int id)
+        {
+            ;
+            return View(_employeeService.GetEmployeesByDepartment(id));
         }
     }  
 }

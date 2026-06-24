@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_Project.Context;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace MVC_Project.Repositories
 {
     public class RepositoryBase<Entity> : IRepositoryBase<Entity> where Entity : class
     {
-        protected readonly DbContext _context;
+        protected readonly EmployeeContext _context;
 
-        public RepositoryBase(DbContext context)
+        public RepositoryBase(EmployeeContext context)
         {
             _context = context;
         }
@@ -19,11 +20,11 @@ namespace MVC_Project.Repositories
         {
             return _context.Set<Entity>().Find(id);
         }
-        public IEnumerable<Entity> GetAll()
+        public IQueryable<Entity> GetAll()
         {
-            return _context.Set<Entity>().ToList();
+            return _context.Set<Entity>();
         }
-        public IEnumerable<Entity> Find(Expression<Func<Entity, bool>> predicate)
+        public IQueryable<Entity> Find(Expression<Func<Entity, bool>> predicate)
         {
             return _context.Set<Entity>().Where(predicate);
         }

@@ -32,7 +32,7 @@
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "GetEmployee", "Employees", new { id = item.ID }, null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID }) |
-            @Html.ActionLink("Hardware", "ListOfHardware", new { ownerID = item.ID })
+            @Html.ActionLink("Hardware", "ListOfHardware", "Hardware", new { id = item.ID }, null)
         </td>
     </tr>
 }
