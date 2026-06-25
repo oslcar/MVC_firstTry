@@ -9,6 +9,5 @@ namespace MVC_Project.Repositories
 {
     public interface IDepartmentRepository : IRepositoryBase<Department>
     {
-        IQueryable<Department> GetAll();
     }
 }
