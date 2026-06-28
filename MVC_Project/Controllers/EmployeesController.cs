@@ -29,19 +29,11 @@ namespace MVC_Project.Controllers
             return View(allEmployees);
 
         }
-<<<<<<< Updated upstream
-=======
 
-        public ActionResult ListOfHardware(int? id)
+        /*public ActionResult ListOfHardware(int? id)
         {
             HardwareRepository hardware = new HardwareRepository(db);
             return View(hardware.GetHardwareByOwner(id).ToList());
-        }
-        */
->>>>>>> Stashed changes
-        public ActionResult GetEmployee(int id)
-        {   
-            return View(_employeeService.Get(id));
         }
         public ActionResult DepartmentEmployees(int id)
         {
