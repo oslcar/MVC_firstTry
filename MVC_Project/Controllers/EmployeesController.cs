@@ -29,16 +29,5 @@ namespace MVC_Project.Controllers
             return View(allEmployees);
 
         }
-
-        /*public ActionResult ListOfHardware(int? id)
-        {
-            HardwareRepository hardware = new HardwareRepository(db);
-            return View(hardware.GetHardwareByOwner(id).ToList());
-        }
-        public ActionResult DepartmentEmployees(int id)
-        {
-            ;
-            return View(_employeeService.GetEmployeesByDepartment(id));
-        }
     }  
 }
