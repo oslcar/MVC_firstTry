@@ -3,7 +3,9 @@ using MVC_Project.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
+using System.Threading.Tasks;
 
 namespace MVC_Project.Service
 {
@@ -26,6 +28,25 @@ namespace MVC_Project.Service
         public IEnumerable<Employee> GetEmployeesByDepartment(int id)
         {
             return _employeeRepository.GetEmployeesByDepartment(id);
+        }
+
+        public async Task Create(Employee employee)
+        {
+            _employeeRepository.Add(employee);
+            await _employeeRepository.Update();
+        }
+
+        public async Task UpdateUserAsync(int id, Employee updatedEmployee)
+        {
+            Employee employee = _employeeRepository.Get(id);
+
+            employee.FName = updatedEmployee.FName;
+            employee.LName = updatedEmployee.LName;
+            employee.Age = updatedEmployee.Age;
+            employee.Country = updatedEmployee.Country;
+            employee.Department = updatedEmployee.Department;
+
+            await _employeeRepository.Update();
         }
     }
 }

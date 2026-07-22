@@ -10,5 +10,6 @@ namespace MVC_Project.Service
     public interface IDepartmentService
     {
         IEnumerable<Department> GetAll();
+        void Create(Department department);
     }
 }

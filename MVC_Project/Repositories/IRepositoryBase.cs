@@ -17,5 +17,6 @@ namespace MVC_Project.Repositories
         void AddRange(IEnumerable<Entity> entities);
         void Remove(Entity entity);
         void RemoveRange(IEnumerable<Entity> entities);
+        Task Update();
     }
 }

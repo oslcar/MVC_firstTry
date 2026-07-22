@@ -12,5 +12,7 @@ namespace MVC_Project.Service
         IEnumerable<Employee> GetAll();
         Employee Get(int id);
         IEnumerable<Employee> GetEmployeesByDepartment(int id);
+        Task Create(Employee employee);
+        Task UpdateUserAsync(int id, Employee updatedEmployee);
     }
 }

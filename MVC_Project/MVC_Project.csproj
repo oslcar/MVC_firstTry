@@ -157,6 +157,7 @@
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Context\EmployeeContext.cs" />
+    <Compile Include="Models\EmployeeFormModel.cs" />
     <Compile Include="Models\Hardware.cs" />
     <Compile Include="Repositories\DbContext.cs" />
     <Compile Include="Repositories\DepartmentRepository.cs" />
@@ -217,10 +218,10 @@
     <Content Include="Views\Departments\ListOfDepartments.cshtml" />
     <Content Include="Views\Employees\DepartmentEmployees.cshtml" />
     <Content Include="Views\Employees\GetEmployee.cshtml" />
+    <Content Include="Views\Employees\CreateEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Hardware\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

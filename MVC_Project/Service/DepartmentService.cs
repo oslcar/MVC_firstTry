@@ -18,5 +18,10 @@ namespace MVC_Project.Service
         {
             return _departmentRepository.GetAll();
         }
+
+        public void Create(Department department)
+        {
+            _departmentRepository.Add(department);
+        }
     }
 }

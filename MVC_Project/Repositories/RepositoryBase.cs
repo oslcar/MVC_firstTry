@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace MVC_Project.Repositories
@@ -44,6 +45,10 @@ namespace MVC_Project.Repositories
         public void RemoveRange(IEnumerable<Entity> entities)
         {
             _context.Set<Entity>().RemoveRange(entities);
+        }
+        public async Task Update()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }
