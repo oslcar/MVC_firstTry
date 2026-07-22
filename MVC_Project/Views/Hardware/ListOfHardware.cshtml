@@ -2,7 +2,7 @@
 
 @{
     var owner = Model.FirstOrDefault().Owner;
-} 
+}
 <h2>@owner.FName @owner.LName - Hardware list</h2>
 
 <p>
@@ -22,22 +22,27 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SN)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Return hardware", "Details", new { id=item.ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SN)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Return hardware", "Details", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>
+<p>
+    @Html.ActionLink($"Back to {owner.FName} {owner.LName} details tab", "DepartmentEmployees", "Employees", new { id = owner.ID}, null)
+</p>
+

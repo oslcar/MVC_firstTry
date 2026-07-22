@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NoHardware</title>
+    <style>
+        body {
+            background-color: lightslategrey;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: darkred;
+        }
+        p {
+            border:groove;
+            border-color: greenyellow;
+            border-width: 6px;
+            font-size: 36px;
+            color: lawngreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        User has no hardware.
+    </h1>
+    <p>
+        @Html.ActionLink("Go back to user tab", "GetEmployee", "Employees", new { id = Model }, null)
+    </p>
+</body>
+</html>

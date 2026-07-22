@@ -17,8 +17,20 @@ namespace MVC_Project.Controllers
             _hardwareService = hardwareService;
         }
         public ActionResult ListOfHardware(int? id)
+        {   
+            if (_hardwareService.GetHardwareByOwner(id).Count() == 0) 
+            {
+                return RedirectToAction("NoHardware", new { id = id });
+            }
+            else
+            {
+                return View(_hardwareService.GetHardwareByOwner(id));
+            }
+        }
+
+        public ActionResult NoHardware(int? id)
         {
-            return View(_hardwareService.GetHardwareByOwner(id));
+            return View(id);
         }
     }
 }
