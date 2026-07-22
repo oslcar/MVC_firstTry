@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVC_Project.Repositories
 {
-    public interface IDepartmentRepository : IRepositoryBase<Department>
+    public interface IDepartmentRepository
     {
         IQueryable<Department> GetAll();
     }
