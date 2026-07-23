@@ -3,6 +3,7 @@ using System.Web.Mvc;
 using Microsoft.Practices.Unity;
 using MVC_Project.Context;
 using MVC_Project.Repositories;
+using MVC_Project.Service;
 using Unity.Mvc4;
 
 namespace MVC_Project
@@ -35,6 +36,11 @@ namespace MVC_Project
     {
             container.RegisterType<DbContext, EmployeeContext>();
             container.RegisterType<IEmployeeRepository, EmployeeRepository>();
+            container.RegisterType<IHardwareRepository, HardwareRepository>();
+            container.RegisterType<IDepartmentRepository, DepartmentRepository>();
+            container.RegisterType<IEmployeeService, EmployeeService>();
+            container.RegisterType<IHardwareService, HardwareService>();
+            container.RegisterType<IDepartmentService, DepartmentService>();
     }
   }
 }

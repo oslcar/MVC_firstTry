@@ -13,7 +13,6 @@ namespace MVC_Project.Repositories
         public EmployeeRepository(EmployeeContext context) : base(context)
         {
         }
-
         public IQueryable<Employee> GetEmployeesByDepartment(int id)
         {
             return _context.Set<Employee>()
